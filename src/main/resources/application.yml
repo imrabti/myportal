@@ -1,0 +1,44 @@
+debug: false
+server:
+  port: 7777
+
+security:
+  user:
+    password: user
+  ignored: /favicon.ico
+  sessions: ALWAYS
+  oauth2:
+    sso:
+      loginPath: /login
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth?autoReconnect=true
+    username: oauth
+    password: oauth
+    test-on-borrow: true
+    test-on-return: false
+    validation-query: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      show-sql: false
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+---
+spring:
+  profiles: default
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8080/uaa/oauth/token
+      userAuthorizationUri: http://localhost:8080/uaa/oauth/authorize
+      clientId: portalapp
+      clientSecret: 0eazudRWsUwWL9UL
+    resource:
+      user-info-uri: http://localhost:8080/uaa/user
