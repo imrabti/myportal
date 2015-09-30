@@ -2,9 +2,9 @@ package org.nuvola.myportal.server.service.impl;
 
 import java.util.List;
 
+import org.nuvola.myportal.server.repository.UserRepository;
 import org.nuvola.myportal.server.service.UsersService;
 import org.nuvola.myportal.shared.vo.UserVO;
-import org.nuvola.oauth.provider.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

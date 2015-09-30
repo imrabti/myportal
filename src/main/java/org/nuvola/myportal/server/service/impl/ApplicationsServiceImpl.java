@@ -3,11 +3,11 @@ package org.nuvola.myportal.server.service.impl;
 import java.security.Principal;
 import java.util.List;
 
+import org.nuvola.myportal.server.repository.ApplicationRepository;
+import org.nuvola.myportal.server.repository.AuthorityRepository;
+import org.nuvola.myportal.server.repository.OAuthClientDetailsRepository;
 import org.nuvola.myportal.server.service.ApplicationsService;
 import org.nuvola.myportal.shared.vo.ApplicationVO;
-import org.nuvola.oauth.provider.repository.ApplicationRepository;
-import org.nuvola.oauth.provider.repository.AuthorityRepository;
-import org.nuvola.oauth.provider.repository.OAuthClientDetailsRepository;
 import org.nuvola.oauth.server.security.SecurityContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
